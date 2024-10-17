@@ -2,6 +2,7 @@
 
 namespace TheMaxieInn.Models
 {
+    [Serializable]
     public class DogReservation
     {
         public int Id { get; set; }
@@ -50,12 +51,19 @@ namespace TheMaxieInn.Models
         [Display(Name = "Will your dog require a special accommodation?")]
         [Required]
         public bool SpecialAccommodation { get; set; }
+        public string? AccommodationDetails { get; set; }
 
         public int CalculateTotalCost()
         {
             const int PricePerNight = 40;
             int totalCost = (CheckOutDate - CheckInDate).Days * PricePerNight;
             return totalCost;
+        }
+
+        public DogReservation()
+        {
+            CheckInDate = DateTime.Now.Date;
+            CheckOutDate = CheckInDate.AddDays(1);
         }
     }
 }

@@ -130,6 +130,11 @@
                     <label class="form-check-label">No</label>
                     <span asp-validation-for="SpecialAccommodation" class="text-danger"></span>
                 </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <label for="AccommodationDetails" class="control-label">If so, please provide your accommodation details below:</label>
+                <textarea asp-for="AccommodationDetails" class="form-control" rows="5" cols="50" id="AccommodationDetails"></textarea>
+                <span asp-validation-for="AccommodationDetails" class="text-danger"></span>
             </div><br />
             <div class="form-group text-center">
                 <button type="submit" value="Save" class="btn btn-success fw-bold">Save Changes</button> 

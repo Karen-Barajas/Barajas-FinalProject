@@ -4,7 +4,7 @@
     ViewData["Title"] = "Reservation Details";
 }
 
-<h1 class="text-center text-white">Your Reservation Details</h1>
+<h1 class="text-center text-white fw-bold">Your Reservation Details</h1>
 
 
 <div class="text-center text-white">
@@ -120,6 +120,13 @@
         </dt>
         <dd class="col-sm-6">
             @(Model.SpecialAccommodation ? "Yes" : "No")
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+           Accommodation Details
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.AccommodationDetails)
         </dd>
         <hr />
         <dt class="col-sm-6">

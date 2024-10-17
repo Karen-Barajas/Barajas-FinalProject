@@ -209,6 +209,15 @@ td {
         color: white;
     }
 
+dt {
+    color: black  
+}
+
+#textbox {
+    width: 60%;
+    margin-top: 10px;
+}
+
 @media (min-width:601px) {
     label {
         width: 10%;

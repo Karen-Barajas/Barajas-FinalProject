@@ -14,13 +14,13 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group row justify-content-center">
                 <label asp-for="CheckInDate" class="control-label"></label>
-                <input asp-for="CheckInDate" class="form-control text-center" />
+                <input asp-for="CheckInDate" class="form-control text-center" id="CheckInDate" type="date" />
                 <span asp-validation-for="CheckInDate" class="text-danger"></span>
             </div>
             <hr />
             <div class="form-group row justify-content-center">
                 <label asp-for="CheckOutDate" class="control-label"></label>
-                <input asp-for="CheckOutDate" class="form-control text-center" />
+                <input asp-for="CheckOutDate" class="form-control text-center" id="CheckOutDate" type="date" />
                 <span asp-validation-for="CheckOutDate" class="text-danger"></span>
             </div>
             <hr />
@@ -128,6 +128,12 @@
                     <label class="form-check-label">No</label>
                     <span asp-validation-for="SpecialAccommodation" class="text-danger"></span>
                 </div>
+            </div>
+            <hr />
+            <div class="form-group row justify-content-center">
+                <label for="AccommodationDetails" class="control-label">If so, please provide your accommodation details below:</label>
+                <textarea asp-for="AccommodationDetails" class="form-control" rows="5" cols="50" id="AccommodationDetails"></textarea>
+                <span asp-validation-for="AccommodationDetails" class="text-danger"></span>
             </div><br />
             <div class="form-group">
                <button type="submit" value="Create" class="btn btn-success fw-bold">Create Reservation</button>

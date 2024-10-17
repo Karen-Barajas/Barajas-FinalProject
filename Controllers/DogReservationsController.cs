@@ -54,7 +54,7 @@ namespace TheMaxieInn.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CheckInDate,CheckOutDate,OwnerName,Address,City,State,ZipCode,Email,PhoneNumber,DogName,DateOfBirth,Breed,Sex,SpayedOrNeutered,Vaccinated,SpecialAccommodation")] DogReservation dogReservation)
+        public async Task<IActionResult> Create([Bind("Id,CheckInDate,CheckOutDate,OwnerName,Address,City,State,ZipCode,Email,PhoneNumber,DogName,DateOfBirth,Breed,Sex,SpayedOrNeutered,Vaccinated,SpecialAccommodation,AccommodationDetails")] DogReservation dogReservation)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace TheMaxieInn.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CheckInDate,CheckOutDate,OwnerName,Address,City,State,ZipCode,Email,PhoneNumber,DogName,DateOfBirth,Breed,Sex,SpayedOrNeutered,Vaccinated,SpecialAccommodation")] DogReservation dogReservation)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CheckInDate,CheckOutDate,OwnerName,Address,City,State,ZipCode,Email,PhoneNumber,DogName,DateOfBirth,Breed,Sex,SpayedOrNeutered,Vaccinated,SpecialAccommodation,AccommodationDetails")] DogReservation dogReservation)
         {
             if (id != dogReservation.Id)
             {
