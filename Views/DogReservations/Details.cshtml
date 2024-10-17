@@ -1,0 +1,138 @@
+﻿@model TheMaxieInn.Models.DogReservation
+
+@{
+    ViewData["Title"] = "Reservation Details";
+}
+
+<h1 class="text-center text-white">Your Reservation Details</h1>
+
+
+<div class="text-center text-white">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CheckInDate)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.CheckInDate)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.CheckOutDate)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.CheckOutDate)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.OwnerName)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.OwnerName)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.State)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.DogName)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.DogName)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Breed)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.Breed)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.SpayedOrNeutered)
+        </dt>
+        <dd class="col-sm-6">
+            @(Model.SpayedOrNeutered ? "Yes" : "No")
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Vaccinated)
+        </dt>
+        <dd class="col-sm-6">
+            @(Model.Vaccinated ? "Yes" : "No")
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.SpecialAccommodation)
+        </dt>
+        <dd class="col-sm-6">
+            @(Model.SpecialAccommodation ? "Yes" : "No")
+        </dd>
+        <hr />
+        <dt class="col-sm-6">
+            Total Reservation Cost
+        </dt>
+        <dd class="col-sm-6">
+            @Model.CalculateTotalCost().ToString("C")
+        </dd>
+        <hr />
+    </dl>
+</div>
+<div class="text-center">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning fw-bold text-white mb-2">Modify Reservation</a> |
+    <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-danger fw-bold mb-2">Cancel Reservation</a> |
+    <a asp-action="Index" class="btn btn-success fw-bold mb-2">Back to Reservations</a>
+</div>

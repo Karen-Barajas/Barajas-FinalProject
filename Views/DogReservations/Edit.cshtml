@@ -1,0 +1,167 @@
+﻿@model TheMaxieInn.Models.DogReservation
+
+@{
+    ViewData["Title"] = "Edit Reservation";
+}
+
+<h1 class="text-center text-white fw-bold">Would you like to modify your reservation?</h1>
+
+<h4 class="text-center text-white fw-bold">Your current reservation details:</h4>
+<hr />
+
+
+<div class="row">    
+        <div class="text-center">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group row justify-content-center">
+                <label asp-for="CheckInDate" class="control-label"></label>
+                <input asp-for="CheckInDate" class="form-control text-center" />
+                <span asp-validation-for="CheckInDate" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="CheckOutDate" class="control-label"></label>
+                <input asp-for="CheckOutDate" class="form-control text-center" />
+                <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="text-center">
+                <div class="d-flex justify-content-center flex-column text-white fw-bold"
+                <label>Total Reservation Cost: </label>
+                <span id="totalCalculatedCost"><u><b>$0.00</u></b></span>
+                </div>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="OwnerName" class="control-label"></label>
+                <input asp-for="OwnerName" class="form-control" />
+                <span asp-validation-for="OwnerName" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="ZipCode" class="control-label"></label>
+                <input asp-for="ZipCode" class="form-control" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="DogName" class="control-label"></label>
+                <input asp-for="DogName" class="form-control" />
+                <span asp-validation-for="DogName" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control text-center" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="Breed" class="control-label"></label>
+                <input asp-for="Breed" class="form-control" />
+                <span asp-validation-for="Breed" class="text-danger"></span>
+            </div>
+            <div class="form-group row justify-content-center">
+                <label asp-for="Sex" class="control-label"></label>
+                <input asp-for="Sex" class="form-control" />
+                <span asp-validation-for="Sex" class="text-danger"></span>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="SpayedOrNeutered"></label>
+                <div class="d-flex justify-content-center">
+                    <input asp-for="SpayedOrNeutered" class="form-check-input" type="radio" value="true" />
+                    <label class="form-check-label">Yes</label>
+                    <input asp-for="SpayedOrNeutered" class="form-check-input" value="false" type="radio" />
+                    <label class="form-check-label">No</label>
+                    <span asp-validation-for="SpayedOrNeutered" class="text-danger"></span>
+                </div>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="Vaccinated"></label>
+                <div class="d-flex justify-content-center">
+                    <input asp-for="Vaccinated" class="form-check-input" type="radio" value="true" />
+                    <label class="form-check-label">Yes</label>
+                    <input asp-for="Vaccinated" class="form-check-input" value="false" type="radio" />
+                    <label class="form-check-label">No</label>
+                    <span asp-validation-for="Vaccinated" class="text-danger"></span>
+                </div>
+            </div>
+                <hr />
+            <div class="form-group row justify-content-center">
+                <label asp-for="SpecialAccommodation"></label>
+                <div class="d-flex justify-content-center">
+                    <input asp-for="SpecialAccommodation" class="form-check-input" type="radio" value="true" />
+                    <label class="form-check-label">Yes</label>
+                    <input asp-for="SpecialAccommodation" class="form-check-input" value="false" type="radio" />
+                    <label class="form-check-label">No</label>
+                    <span asp-validation-for="SpecialAccommodation" class="text-danger"></span>
+                </div>
+            </div><br />
+            <div class="form-group text-center">
+                <button type="submit" value="Save" class="btn btn-success fw-bold">Save Changes</button> 
+            </div>
+        </form>
+        </div>   
+</div>
+
+<div class="text-center">
+    <a asp-action="Index" class="btn btn-warning text-white fw-bold mt-3">Back to Reservations</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        function updateTotalCost() {
+            const checkInDateValue = document.getElementById("CheckInDate").value;
+            const checkOutDateValue = document.getElementById("CheckOutDate").value;
+
+            const checkInDate = new Date(checkInDateValue);
+            const checkOutDate = new Date(checkOutDateValue);
+            const pricePerNight = 40;
+
+            const totalDays = Math.max(0, (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
+            const totalCost = totalDays * pricePerNight;
+
+            document.getElementById("totalCalculatedCost").innerHTML = `<b>$${totalCost.toFixed(2)}</b>`;
+        }
+
+        document.getElementById("CheckInDate").addEventListener("change", updateTotalCost);
+        document.getElementById("CheckOutDate").addEventListener("change", updateTotalCost);
+
+    </script>
+}

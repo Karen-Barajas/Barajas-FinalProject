@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TheMaxieInn.Models.DogReservation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center text-white fw-bold ">Your Reservations</h1>
+<hr />
+
+<p class="text-center">
+    <a asp-action="Create" class="btn btn-light btn-outline-warning btn-lg fw-bold">Click here to make a reservation!</a>
+</p>
+
+<table class="table table-bordered border-warning">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => item.OwnerName):</strong></td>
+                <td>@Html.DisplayFor(modelItem => item.OwnerName)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => item.DogName):</strong></td>
+                <td>@Html.DisplayFor(modelItem => item.DogName)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => item.CheckInDate):</strong></td>
+                <td>@Html.DisplayFor(modelItem => item.CheckInDate)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => item.CheckOutDate):</strong></td>
+                <td>@Html.DisplayFor(modelItem => item.CheckOutDate)</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success fw-bold">Details</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning fw-bold text-light">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger fw-bold">Delete</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><hr /></td><!-- Optional: adds a horizontal line for separation -->
+            </tr>
+        }
+    </tbody>
+</table>
